@@ -1,8 +1,7 @@
 import json
-import textwrap
 
 JSON_FILE_PATH = 'cards.json'
-    
+
 try:
   with open(JSON_FILE_PATH, 'r', encoding='utf-8') as f:
     all_cards_data = json.load(f)
@@ -51,5 +50,7 @@ def find_card(search_term: str):
     card for card in all_cards_data
     if search_term in card.get("ability_name", "").lower()
   ]
+
+  print(f"Found {len(found_cards)} cards matching '{search_term}'.")
 
   return found_cards

@@ -19,7 +19,7 @@ print("Started at " + time.strftime("%m/%d/%y %H:%M:%S"))
 @app_commands.describe(query = "The partial or complete name of the domain card")
 async def cardquery(interaction: discord.Interaction, query:str=''):    
     username = str(interaction.user.display_name)
-    print(time.strftime("%m/%d/%y %H:%M:%S") + " " + username + " searche the spell " + query)
+    print(time.strftime("%m/%d/%y %H:%M:%S") + " " + username + " searched the card " + query)
     await interaction.response.send_message(cards.get_card_by_name(query))
 
 @bot.tree.command(name="dd", description='Roll a Duality Dice.')
@@ -58,7 +58,7 @@ async def on_ready():
         print(f'Synced {len(synced)} command(s)')        
     except Exception as e:
         print(e)    
-    await bot.change_presence(activity=discord.CustomActivity(name='Spotlighting'))
+    await bot.change_presence(activity=discord.CustomActivity(name='Spotlighting'))    
 
 bot.run(my_token.TOKEN)
 
