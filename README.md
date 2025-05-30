@@ -1,4 +1,4 @@
-This is a discord bot to allow the roll of d12s (Duality Dice) used by the RPG Daggerheart by Darrinton Press.
+This is a discord bot to allow the roll of d12s (Duality Dice) used by the RPG Daggerheart by Darrington Press.
 
 I keep it hosted on my end at https://discord.com/oauth2/authorize?client_id=1377666244723085422 without any guarantee of reliability. Don't trust any bot on the Internet! :)
 
