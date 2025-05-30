@@ -2,13 +2,11 @@
 import random
 import dice
 
-def roll(username, diceexpression:str, reason:str):
+def roll(username, diceexpression:str):
     try:
         roll = dice.roll(diceexpression)
-        result = username + " rolled " + str(diceexpression) 
-        if reason:
-            result = result + " for " + reason 
-        result = result + "\nResult: " + str(roll)
+        result = username + " rolled " + str(diceexpression)         
+        result = result + ", resulting in " + str(roll)
         return result
     except dice.DiceBaseException as e:
         print(e)
