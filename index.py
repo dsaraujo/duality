@@ -38,6 +38,13 @@ async def rr(interaction: discord.Interaction, modifier: int = 0):
     print(time.strftime("%m/%d/%y %H:%M:%S") + " " + r)    
     await interaction.response.send_message(r)
 
+@bot.tree.command(name="roll", description='Roll traditional dice expressions.')
+@app_commands.describe(diceexpression = "The dice expression, like 1d20+6", reason = "The reason for the roll")
+async def roll(interaction: discord.Interaction, diceexpression: str, reason:str=''):
+    username = str(interaction.user.display_name)
+    print(time.strftime("%m/%d/%y %H:%M:%S") + " " + username + " rolled a dice expression " + diceexpression +  " for " + reason)    
+    await interaction.response.send_message(rolls.roll(username, diceexpression, reason))
+
 @bot.event
 async def on_command_error(ctx, error):
     await ctx.send("Invalid Command")
